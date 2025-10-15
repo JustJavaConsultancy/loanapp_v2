@@ -1,0 +1,96 @@
+    <!DOCTYPE html>
+            <html xmlns:th="http://www.thymeleaf.org" 
+                  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+                  layout:decorate="~{layout}">
+            <head>
+                <title th:text="${appName} + ' - Home'">Home</title>
+            </head>
+            <body>
+                <div layout:fragment="content">
+                    ```html
+<body>
+    <!-- Hero Section -->
+    <div class="container-fluid bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="display-4">Loan Management System</h1>
+                    <p class="lead">Streamline your loan application, verification, and approval process with our comprehensive solution.</p>
+                    <a href="#" class="btn btn-light btn-lg mt-3">Get Started</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/images/loan-hero.svg" alt="Loan Management System" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brief Description -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2>Efficient Loan Workflow</h2>
+                <p class="lead">Our Loan Management System simplifies the entire loan process from application to approval, ensuring a seamless experience for both applicants and lenders.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Summary Area -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-file-earmark-text display-4 text-primary mb-3"></i>
+                        <h3 class="card-title">Loan Application</h3>
+                        <p class="card-text">Applicants can easily submit their loan applications through our user-friendly interface.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-search display-4 text-primary mb-3"></i>
+                        <h3 class="card-title">Verification</h3>
+                        <p class="card-text">Our system automates the verification process, ensuring all documents and information are accurate and valid.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-check-circle display-4 text-primary mb-3"></i>
+                        <h3 class="card-title">Approval</h3>
+                        <p class="card-text">Lenders can efficiently review and approve loan applications, reducing processing times and improving decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Authentication Status -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2>User Authentication Status</h2>
+                <p class="lead" sec:authorize="isAuthenticated()">
+                    Welcome back, <span sec:authentication="name">User</span>!
+                </p>
+                <p class="lead" sec:authorize="!isAuthenticated()">
+                    Please <a href="/login">login</a> or <a href="/register">register</a> to access the full features of our Loan Management System.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Loan Management System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+```
+                </div>
+            </body>
+            </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Detail</title>
+</head>
+<body>
+    <h1 th:text="${task.name}"></h1>
+    <form th:action="@{/loan/task/complete/{taskId}(taskId=${task.id})}" method="post">
+        <div th:if="${task.name == 'Verify Application'}">
+            <label for="verificationResult">Verification Result:</label>
+            <select id="verificationResult" name="verificationResult" required>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+            </select><br>
+        </div>
+        <div th:if="${task.name == 'Approve Loan'}">
+            <label for="approvalStatus">Approval Status:</label>
+            <select id="approvalStatus" name="approvalStatus" required>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+            </select><br>
+        </div>
+        <button type="submit">Complete Task</button>
+    </form>
+</body>
+</html>

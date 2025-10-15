@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Running Tasks</h1>
+    <ul>
+        <li th:each="task : ${runningTasks}">
+            <a th:href="@{/loan/task/{taskId}(taskId=${task.id})}" th:text="${task.name}"></a>
+        </li>
+    </ul>
+
+    <h1>Completed Tasks</h1>
+    <ul>
+        <li th:each="task : ${completedTasks}">
+            <span th:text="${task.name}"></span>
+        </li>
+    </ul>
+</body>
+</html>
