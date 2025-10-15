@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Active Tasks</title>
+</head>
+<body>
+    <h1>Active Tasks</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Applicant Name</th>
+                <th>Loan Amount</th>
+                <th>Credit Score</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="task : ${tasks}">
+                <td th:text="${task.applicantName}"></td>
+                <td th:text="${task.loanAmount}"></td>
+                <td th:text="${task.creditScore}"></td>
+                <td><a th:href="@{/loan-application/complete/{taskId}(taskId=${task.taskId})}">Complete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

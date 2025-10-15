@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Complete Task</title>
+</head>
+<body>
+    <h1>Complete Task</h1>
+    <form th:action="@{/loan-application/complete/{taskId}(taskId=${task.taskId})}" method="post">
+        <div>
+            <label for="decision">Decision:</label>
+            <select id="decision" name="decision" required>
+                <option value="approve">Approve</option>
+                <option value="reject">Reject</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
